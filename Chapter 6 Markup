@@ -1,0 +1,41 @@
+// Chapter 6 Markup - Programming Challenge
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+int main ()
+{
+  // Function prototype
+  double calculateRetail(double, double);
+	
+  double wholesale,   // The wholesale cost
+         markup,      // The markup percent
+         retailPrice; // The retail price
+  
+  cout << fixed << showpoint << setprecision(2);
+  
+  // Get wholesale and markup input
+  cout << "Enter the wholesale price and markup percent:\n";
+  cin >> wholesale >> markup;
+  
+  // Validate input
+  while (wholesale < 0 || markup < 0)
+  {
+    cout << "The wholesale price and markup percent cannot be negative.\n"
+         << "Enter the wholesale price and markup percent: \n";
+    cin >> wholesale >> markup;
+   }
+	
+  // Call the calculateRetail function to calculate the retail price.
+  retailPrice = calculateRetail(wholesale, markup);
+  
+  if (wholesale > 0 || markup > 0)
+  //display the retail price
+  cout << "The retail price is: $" << retailPrice << endl;
+  return 0;
+}
+
+double calculateRetail(double value1, double value2)
+{
+  return value1 + (value1 * value2) / 100;
+}

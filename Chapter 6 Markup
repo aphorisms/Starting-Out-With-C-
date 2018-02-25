@@ -3,11 +3,11 @@
 #include <iomanip>
 using namespace std;
 
+// Function prototype
+double calculateRetail(double, double);
+  
 int main ()
-{
-  // Function prototype
-  double calculateRetail(double, double);
-	
+{	
   double wholesale,   // The wholesale cost
          markup,      // The markup percent
          retailPrice; // The retail price
